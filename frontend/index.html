@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Streak — Daily Check-in for Agent ID Holders</title>
+<meta name="description" content="Agent Streak: a free daily check-in game for Agent ID holders. Build your streak, climb the leaderboard. Gas only, no promised returns.">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🔥 Agent Streak</div>
+  <div class="wallet-area">
+    <span id="chain-badge" class="badge hidden"></span>
+    <button id="connect-btn" class="btn primary">Connect Wallet</button>
+    <button id="switch-btn" class="btn hidden">Switch Network</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Check in daily. Keep the streak alive.</h1>
+    <p class="sub">A free daily check-in game for Agent ID holders. One check-in per day,
+    your streak is tied to your soulbound <code>.ai</code> identity — it can't be
+    transferred, lent, or faked. Gas only. No promised returns.</p>
+    <p id="testnet-banner" class="banner hidden">⚠️ TESTNET — Mock Agent ID, not the official Agent ID.
+      Handles here are test-only.</p>
+    <p id="not-deployed" class="banner hidden">⚠️ The AgentStreak contract is not deployed on this
+      network yet. Contract address: TBD — see <code>contracts/DEPLOY-NOTES.md</code>.</p>
+  </section>
+
+  <section class="card" id="agent-id-card">
+    <h2>Your Agent ID</h2>
+    <p id="agent-status" class="muted">Connect your wallet to check your Agent ID.</p>
+    <p id="agent-handle" class="handle hidden"></p>
+  </section>
+
+  <section class="card" id="checkin-card">
+    <h2>Daily Check-in</h2>
+    <button id="checkin-btn" class="btn primary big" disabled>Check In</button>
+    <p id="tx-status" class="muted"></p>
+    <p id="tx-link"></p>
+  </section>
+
+  <section class="card" id="mystreak-card">
+    <h2>My Streak</h2>
+    <dl class="stats">
+      <div><dt>Handle</dt><dd id="my-handle">—</dd></div>
+      <div><dt>Current streak</dt><dd id="my-streak">—</dd></div>
+      <div><dt>Total check-ins</dt><dd id="my-total">—</dd></div>
+      <div><dt>Last check-in (UTC day)</dt><dd id="my-last">—</dd></div>
+    </dl>
+  </section>
+
+  <section class="card" id="leaderboard-card">
+    <h2>Leaderboard <span class="muted small">— top 10 by streak, then total check-ins</span></h2>
+    <p id="lb-status" class="muted">Loading…</p>
+    <ol id="leaderboard" class="leaderboard"></ol>
+  </section>
+
+  <section class="card" id="recent-card">
+    <h2>Recent Check-ins</h2>
+    <p id="recent-status" class="muted">Loading…</p>
+    <ul id="recent-list" class="recent"></ul>
+  </section>
+
+  <footer class="footer">
+    <p>Agent Streak — free daily check-in game gated on-chain by Agent ID.
+    Contract is open-source and verified. No promised returns.</p>
+    <p class="muted small">Agent ID registry (BSC mainnet):
+      <a id="registry-link" href="https://bscscan.com/address/0x60b9262456de011f7d15a54cdd8c48baaa8b022f" target="_blank" rel="noopener">0x60b9…022f</a></p>
+  </footer>
+</main>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

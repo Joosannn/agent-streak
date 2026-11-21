@@ -1,0 +1,13 @@
+{
+  "contract": "AgentStreak",
+  "address": "0x914EdE540AF6fAAf1826BBa1db162d60bFa3b254",
+  "txHash": "0xbcd8e00c6584dab8ea5799669f7a2dfea86afcbd7369681b812fc62bd8c65021",
+  "blockNumber": 134501770,
+  "gasUsed": "601934",
+  "gasPriceWei": "50000000",
+  "costBNB": "0.0000300967",
+  "deployer": "0x6946B7deDC00764399A21B27B7628bd6aE4dF792",
+  "registry": "0x60b9262456de011f7d15a54cdd8c48baaa8b022f",
+  "chainId": 56,
+  "deployedAt": "2026-11-19T12:16:53.700Z"
+}
